@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import io
+
 
 # Set Page Config
 st.set_page_config(page_title="Unit Converter", page_icon="🔄", layout="wide")
@@ -133,3 +133,20 @@ elif page == "About":
 
     This tool is perfect for students, engineers, scientists, and anyone who needs **fast and accurate** unit conversions! 🚀
     """)
+
+elif page == "Contact":
+    st.title("📞 Contact Us")
+    st.write("Have questions or feedback? Fill out the form below, and we'll get back to you!")
+
+# User Inputs
+username = st.text_input("Username", placeholder="Enter your username")
+name = st.text_input("Full Name", placeholder="Enter your full name")
+email = st.text_input("Email", placeholder="Enter your email address")
+message = st.text_area("Message", placeholder="Type your message here...")
+
+# Submit Button
+if st.button("Submit"):
+    if username and name and email and message:
+        st.success("✅ Thank you! Your message has been sent successfully.")
+    else:
+        st.error("⚠️ Please fill in all the fields before submitting.")
